@@ -1,10 +1,10 @@
-baseline_cnn seed=0 acc=0.967 worst=0.946 (82s)
-baseline_cnn seed=1 acc=0.800 worst=0.739 (71s)
-baseline_cnn seed=2 acc=0.823 worst=0.756 (74s)
-focal_cnn seed=0 acc=0.938 worst=0.926 (73s)
-focal_cnn seed=1 acc=0.915 worst=0.909 (75s)
-focal_cnn seed=2 acc=0.769 worst=0.748 (70s)
+baseline_cnn seed=0 acc=0.967 worst=0.946 (73s)
+baseline_cnn seed=1 acc=0.800 worst=0.739 (70s)
+baseline_cnn seed=2 acc=0.823 worst=0.756 (72s)
+focal_cnn seed=0 acc=0.938 worst=0.926 (70s)
+focal_cnn seed=1 acc=0.915 worst=0.909 (72s)
+focal_cnn seed=2 acc=0.769 worst=0.748 (73s)
 reweighed_cnn seed=0 acc=1.000 worst=1.000 (72s)
 reweighed_cnn seed=1 acc=0.983 worst=0.983 (69s)
-reweighed_cnn seed=2 acc=0.938 worst=0.930 (67s)
-done in 687s
+reweighed_cnn seed=2 acc=0.938 worst=0.930 (65s)
+done in 669s

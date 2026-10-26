@@ -31,7 +31,11 @@ def analyse(df):
     df = df.with_columns(
         pl.concat_list(ann).alias("votes")
     ).with_columns(
-        pl.col("votes").list.eval(pl.element().mode().first()).list.first().alias("majority"),
+        # majority vote; if all three annotators disagree, fall back to the most reliable one (ann_A)
+        # so that the result is deterministic (Polars' mode() order is not defined for ties)
+        pl.when((pl.col("ann_A") == pl.col("ann_B")) | (pl.col("ann_A") == pl.col("ann_C"))).then(pl.col("ann_A"))
+          .when(pl.col("ann_B") == pl.col("ann_C")).then(pl.col("ann_B"))
+          .otherwise(pl.col("ann_A")).alias("majority"),
         pl.col("votes").list.n_unique().alias("n_distinct"),
     ).with_columns(
         (pl.col("n_distinct") == 1).alias("unanimous"),
