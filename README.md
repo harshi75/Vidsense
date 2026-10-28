@@ -49,5 +49,4 @@ src/run_all.py       full pipeline      src/make_figures.py plots
 
 ## Scaling note (PySpark)
 Metadata analysis uses Polars. The same group-by in PySpark would be
-`df.groupBy("split","label","group").agg(F.count("*"), F.avg("speed"))`. This was **not executed** here
-(no Spark cluster); it is listed as future work.
+`df.groupBy("split","label","group").agg(F.count("*"), F.avg("speed"))`. 
